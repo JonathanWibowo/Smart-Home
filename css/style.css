@@ -1,0 +1,12 @@
+input[type=button] {
+  padding: 5px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.col-xs-12, .col-sm-8, .col-md-4 {
+  text-align: center; }
+  .col-xs-12 h1, .col-sm-8 h1, .col-md-4 h1 {
+    text-transform: uppercase; }
+
+/*# sourceMappingURL=style.css.map */

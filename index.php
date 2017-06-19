@@ -1,3 +1,13 @@
+<?php
+if(isset($_GET['light-off']))
+{
+	shell_exec("sudo python /var/www/html/lightOff.py");
+}
+else if(isset($_GET['light-on']))
+{
+	shell_exec("sudo python /var/www/html/lightOn.py");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,28 +26,13 @@
 		<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-sm-offset-2 col-md-offset-4 col-md-4 col-md-offset-4">
 			<h1>Smart Home</h1>
 			<form action="index.php" method="GET">
-				<input type="button" class="btn" id="lamp" name="lamp" value="Off" style="background-color: #ff4949;">
+				<!-- <input type="button" class="btn" id="lamp" name="lamp" value="Off" style="background-color: #ff4949;"> -->
+				<input type="button" class="btn btn-danger" name="light-off" value="OFF">
+				<input type="button" class="btn btn-success" name="light-on" value="ON">
 			</form>
 		</div>
 	</div>
 </div>
-<?php
-$lamp_status = false;
-
-if(isset($_GET['lamp']))
-{
-	if($lamp_status)
-	{
-		shell_exec("sudo python");
-		$lamp_status = true;
-	}
-	else
-	{
-		shell_exec("sudo python");
-		$lamp_status = false;
-	}
-}
-?>
 <script type="text/javascript" src="js/effect.js"></script>
 </body>
 </html>
